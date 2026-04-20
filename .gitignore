@@ -1,0 +1,23 @@
+# 编译输出目录
+Debug_*/
+Release_*/
+
+# 调试文件
+*.elf
+*.bin
+*.hex
+*.out
+
+# IDE 配置与临时文件
+#.settings/
+#.project
+#.cproject
+*.bak
+*.swp
+*.swo
+*.swn
+*.tmp
+
+# 日志
+*.log
+*.trace
