@@ -43,6 +43,7 @@
     <SdkVersionValue>SDK_S32K1xx_15</SdkVersionValue>
     <SdkRepositoryName>SDK_S32K1xx_15</SdkRepositoryName>
     <SdkRepositoryId>SDK_S32K1xx_15</SdkRepositoryId>
+    <SdkLibraryModes lines_count="0" />
   </Options>
   <UserFolder>
     <UserFolderName />
@@ -22614,7 +22615,7 @@
         <ItemSymbol>ProjectComponentsCountChanged</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>2</Value>
+        <Value>0</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>ModuleName_ADC</ItemSymbol>
@@ -24278,7 +24279,7 @@
         <ItemSymbol>FreeRTOSFileDirectory</ItemSymbol>
         <ReadOnly>true</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>D:\Apps\NXP\S32DS.for.Arm\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\rtos\FreeRTOS_S32K\</Value>
+        <Value>E:\03_Software\S32DS.for.Arm\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\rtos\FreeRTOS_S32K\</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>VersionSpecificItem</ItemSymbol>

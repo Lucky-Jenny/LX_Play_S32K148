@@ -6,6 +6,8 @@
 #include "task.h"
 #include "Cpu.h"
 #include "uart.h"
+#include "key.h"
+#include "led.h"
 #include "MyTask.h"
 
 
@@ -14,7 +16,14 @@ static void MyTask_10ms(void *pvParameters)
     (void)pvParameters;
     while(1)
     {
-        //PINS_DRV_TogglePins(PTE, 1 << 23);
+        if(Key_Is_Pressed(KEY_1_INDEX))
+        {
+            LED_Set_Light(LED_PORT_YELLOW, LED_LIGHT_ON);
+        }
+        else
+        {
+            LED_Set_Light(LED_PORT_YELLOW, LED_LIGHT_OFF);
+        }
         vTaskDelay(MTASK_DELAY_10_MS);
     }
 }
@@ -24,7 +33,14 @@ static void MyTask_50ms(void *pvParameters)
     (void)pvParameters;
     while(1)
     {
-        //PINS_DRV_TogglePins(PTE, 1 << 22);
+        if(Key_Is_Pressed(KEY_2_INDEX))
+        {
+            LED_Set_Light(LED_PORT_RED, LED_LIGHT_ON);
+        }
+        else
+        {
+            LED_Set_Light(LED_PORT_RED, LED_LIGHT_OFF);
+        }
         vTaskDelay(MTASK_DELAY_50_MS);
     }
 }
@@ -34,7 +50,14 @@ static void MyTask_100ms(void *pvParameters)
     (void)pvParameters;
     while(1)
     {
-        //PINS_DRV_TogglePins(PTE, 1 << 21);
+        if(Key_Is_Pressed(KEY_3_INDEX))
+        {
+            LED_Set_Light(LED_PORT_GREEN, LED_LIGHT_ON);
+        }
+        else
+        {
+            LED_Set_Light(LED_PORT_GREEN, LED_LIGHT_OFF);
+        }
         vTaskDelay(MTASK_DELAY_100_MS);
     }
 }
@@ -44,8 +67,14 @@ static void MyTask_500ms(void *pvParameters)
     (void)pvParameters;
     while(1)
     {
-        PINS_DRV_TogglePins(PTE, 1 << 20);
-        u1_printf("MyTask_500ms is runnig.\r\n");
+        if(Key_Is_Pressed(KEY_4_INDEX))
+        {
+            LED_Set_Light(LED_PORT_BLUE, LED_LIGHT_ON);
+        }
+        else
+        {
+            LED_Set_Light(LED_PORT_BLUE, LED_LIGHT_OFF);
+        }
         vTaskDelay(MTASK_DELAY_500_MS);
     }
 }
