@@ -19,7 +19,7 @@
         <Line>Generated_Code\i2c_pal_cfg.h</Line>
       </GenExtraFiles>
       <XtraAge0>1553239059</XtraAge0>
-      <XtraAge1>1553497378</XtraAge1>
+      <XtraAge1>1553826982</XtraAge1>
       <GenExtraFileType1>4</GenExtraFileType1>
       <GenExtraFileType0>4</GenExtraFileType0>
       <GenLinkedFiles lines_count="0" />
@@ -808,7 +808,7 @@
     <GenComponentVersion>01.197</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
-    <HeaderAge>1553497378</HeaderAge>
+    <HeaderAge>1553826982</HeaderAge>
     <CodeAge>1553484634</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>3</GenNumMethods>
@@ -852,7 +852,7 @@
     <GenDriverVersion>1.4</GenDriverVersion>
     <GenEventModule />
     <HeaderAge>1553814052</HeaderAge>
-    <CodeAge>1553814052</CodeAge>
+    <CodeAge>1553816974</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>25</GenNumMethods>
     <PINS_DRV_Init>true</PINS_DRV_Init>
@@ -1302,8 +1302,8 @@
     <GenComponentVersion>SDK_S32K1xx_15</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1553497378</HeaderAge>
-    <CodeAge>1553497378</CodeAge>
+    <HeaderAge>1553826982</HeaderAge>
+    <CodeAge>1553826982</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>23</GenNumMethods>
     <I2C_MasterInit>true</I2C_MasterInit>

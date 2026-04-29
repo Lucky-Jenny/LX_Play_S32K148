@@ -21,6 +21,7 @@ void Timer0_ISR_100ms(void)
 {
     counter_tmr0++;
     // OLED_write_number(8, 12, counter_tmr0, 8, 0);
+    OLED_ShowString(8,2,(uint8_t*)"counterTmr0:",8,0);
 
     /* Clear Flag of FTM */
     FTM_DRV_ClearStatusFlags(INST_FLEXTIMER_MC1, (uint32_t)FTM_TIME_OVER_FLOW_FLAG);

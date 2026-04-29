@@ -36,7 +36,8 @@
 #include "oled.h"
 
 /* User Macros */
-#define PEX_RTOS_START 			MyTask_Start_Schedule
+#define PEX_RTOS_INIT           MyTask_Inital_Task
+#define PEX_RTOS_START 			MyTask_Start_Scheduler
 /* End of User Macros */
 
 /*! 
@@ -72,7 +73,7 @@ int main(void)
   /* OLED */
   // OLED_Init(); // OLED can only sync semaphore from SysTick. If FreeRTOS, it failed.
 
-  LOG_PRINT("Initialization Complete. MCU Freq: %dMhz\r\n", Delay_GetMcuFreq());
+  //LOG_PRINT("Initialization Complete. MCU Freq: %dMhz\r\n", Delay_GetMcuFreq());
   /* ----- Initialization Complete ----- */
 
   /*** Don't write any code pass this line, or it will be deleted during code generation. ***/
