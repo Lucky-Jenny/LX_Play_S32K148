@@ -30,6 +30,10 @@
 
 /* User includes (#include below this line is not maintained by Processor Expert) */
 #include "MyTask.h"
+#include "timer.h"
+#include "uart.h"
+#include "delay.h"
+#include "oled.h"
 
 /* User Macros */
 #define PEX_RTOS_START 			MyTask_Start_Schedule
@@ -44,7 +48,6 @@
 int main(void)
 {
   /* Write your local variable definition here */
-
   /*** Processor Expert internal initialization. DON'T REMOVE THIS CODE!!! ***/
   #ifdef PEX_RTOS_INIT
     PEX_RTOS_INIT();                   /* Initialization of the selected RTOS. Macro is defined by the RTOS component. */
@@ -52,11 +55,25 @@ int main(void)
   /*** End of Processor Expert internal initialization.                    ***/
 
   /* Write your code here */
-	CLOCK_SYS_Init(g_clockManConfigsArr, CLOCK_MANAGER_CONFIG_CNT,g_clockManCallbacksArr, CLOCK_MANAGER_CALLBACK_CNT);
-	CLOCK_SYS_UpdateConfiguration(0U, CLOCK_MANAGER_POLICY_AGREEMENT);
-	PINS_DRV_Init(NUM_OF_CONFIGURED_PINS, g_pin_mux_InitConfigArr); // GPIO
-	LPUART_DRV_Init(INST_LPUART1, &lpuart1_State, &lpuart1_InitConfig0); // UART
-	u1_printf("Initialization Complete.\r\n");
+  /* ----- Initialization ----- */
+  /* Clock */
+  CLOCK_SYS_Init(g_clockManConfigsArr, CLOCK_MANAGER_CONFIG_CNT,g_clockManCallbacksArr, CLOCK_MANAGER_CALLBACK_CNT);
+  CLOCK_SYS_UpdateConfiguration(0U, CLOCK_MANAGER_POLICY_AGREEMENT);
+  /* Delay */
+  Delay_Init();
+  /* Timer */
+  Timer_Init();
+  /* GPIO */
+  PINS_DRV_Init(NUM_OF_CONFIGURED_PINS, g_pin_mux_InitConfigArr);
+  /* UART */
+  LPUART_DRV_Init(INST_LPUART1, &lpuart1_State, &lpuart1_InitConfig0);
+  /* I2C */
+  I2C_MasterInit(&i2c1_instance, &i2c1_MasterConfig0);
+  /* OLED */
+  // OLED_Init(); // OLED can only sync semaphore from SysTick. If FreeRTOS, it failed.
+
+  LOG_PRINT("Initialization Complete. MCU Freq: %dMhz\r\n", Delay_GetMcuFreq());
+  /* ----- Initialization Complete ----- */
 
   /*** Don't write any code pass this line, or it will be deleted during code generation. ***/
   /*** RTOS startup code. Macro PEX_RTOS_START is defined by the RTOS component. DON'T MODIFY THIS CODE!!! ***/

@@ -24,6 +24,6 @@ void LED_Set_Light(uint8_t led_port, uint8_t led_status)
     }
     else
     {
-        u1_printf("[LED_Set_Light] led_port is invalid!\n");
+        LOG_PRINT("[LED_Set_Light] led_port is invalid!\n");
     }
 }

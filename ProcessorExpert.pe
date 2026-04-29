@@ -3,7 +3,7 @@
   <Header>
     <Name>LX_Play_S32K148</Name>
     <SavedBy>baoba</SavedBy>
-    <ModificationStamp>6</ModificationStamp>
+    <ModificationStamp>8</ModificationStamp>
     <Date>2026-04-20</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.12.2.RT7_b1743-0713</PEversion>
@@ -5026,7 +5026,7 @@
         <ItemSymbol>LPI2C1_lpi2c_scl_scl</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>&lt;Automatic&gt;</Value>
+        <Value>PTE1</Value>
         <SharedPrphMode>false</SharedPrphMode>
       </ItemState>
       <ItemState>
@@ -5040,7 +5040,7 @@
         <ItemSymbol>LPI2C1_lpi2c_sda_sda</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>&lt;Automatic&gt;</Value>
+        <Value>PTE0</Value>
         <SharedPrphMode>false</SharedPrphMode>
       </ItemState>
       <ItemState>
@@ -16963,8 +16963,8 @@
         <ItemSymbol>PTE1_DSE</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>&lt;Automatic&gt;</Value>
-        <PinFuncPropStateId>&lt;Automatic&gt;</PinFuncPropStateId>
+        <Value>High</Value>
+        <PinFuncPropStateId>state_1</PinFuncPropStateId>
       </ItemState>
       <ItemState>
         <ItemSymbol>PTE1_PE</ItemSymbol>
@@ -17038,8 +17038,8 @@
         <ItemSymbol>PTE0_DSE</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>&lt;Automatic&gt;</Value>
-        <PinFuncPropStateId>&lt;Automatic&gt;</PinFuncPropStateId>
+        <Value>High</Value>
+        <PinFuncPropStateId>state_1</PinFuncPropStateId>
       </ItemState>
       <ItemState>
         <ItemSymbol>PTE0_PE</ItemSymbol>
@@ -22615,7 +22615,7 @@
         <ItemSymbol>ProjectComponentsCountChanged</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>1</Value>
+        <Value>0</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>ModuleName_ADC</ItemSymbol>

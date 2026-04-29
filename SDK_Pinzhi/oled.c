@@ -480,7 +480,7 @@
   	OLED_ShowString(64,1,title,8,0);
   }
 
-void oled_init(void)
+void OLED_Init(void)
 {
 	  delay_ms(50);
 	  OLED_WrCmd(0xae);//--turn off oled panel

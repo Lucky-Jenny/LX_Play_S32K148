@@ -13,7 +13,7 @@
 
 char USART1_TX_BUF[200];
 
-void u1_printf(char* fmt,...)
+void Uart1_Printf(char* fmt,...)
 {
     uint32_t bytesRemaining;
     va_list ap;

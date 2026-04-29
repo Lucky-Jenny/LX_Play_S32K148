@@ -19,7 +19,6 @@
 
  uint8_t I2c_Send_Byte(uint8_t Dev_reg,uint8_t data);
  uint8_t I2c_Read_Byte(uint8_t Dev_reg);
- void oled_init(void);
  void OLED_WrDat(unsigned char IIC_Data);
  void OLED_WrCmd(unsigned char IIC_Command);
  void OLED_Set_Pos(unsigned char x, unsigned char y);
