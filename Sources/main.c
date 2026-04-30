@@ -25,6 +25,7 @@
 
 /* Including necessary module. Cpu.h contains other modules needed for compiling.*/
 #include "Cpu.h"
+#include "S32K148.h"
 
   volatile int exit_code = 0;
 
@@ -68,8 +69,9 @@ int main(void)
   PINS_DRV_Init(NUM_OF_CONFIGURED_PINS, g_pin_mux_InitConfigArr);
   /* UART */
   LPUART_DRV_Init(INST_LPUART1, &lpuart1_State, &lpuart1_InitConfig0);
-  /* I2C */
-  I2C_MasterInit(&i2c1_instance, &i2c1_MasterConfig0);
+//   /* I2C */
+//   I2C_MasterInit(&i2c1_instance, &i2c1_MasterConfig0);
+  //INT_SYS_SetPriority(LPI2C1_Master_IRQn, 5U);
   /* OLED */
   // OLED_Init(); // OLED can only sync semaphore from SysTick. If FreeRTOS, it failed.
 

@@ -22,17 +22,27 @@ static void MyTask_Init(void *pvParameters)
 {
     (void)pvParameters;
 
+    /* I2C */
+    I2C_MasterInit(&i2c1_instance, &i2c1_MasterConfig0);
+    INT_SYS_SetPriority(LPI2C1_Master_IRQn, 5U);
     /* OLED */
     OLED_Init();
 
     LOG_PRINT("Initialization Complete. MCU Freq: %dMhz\r\n", Delay_GetMcuFreq());
+    OLED_TITLE((uint8_t*)"S32K148",(uint8_t*)"05_FTM");
+
+    /* Delete this Task. */
+    vTaskDelete(NULL);
 }
 
 static void MyTask_10ms(void *pvParameters)
 {
     (void)pvParameters;
+    //OLED_Init();
     while(1)
     {
+        OLED_ShowString(0,0,"HELLO OLED", 11, 0);
+        //OLED_ShowString(8,2,(uint8_t*)"counterTmr0:",8,0);
         if(Key_Is_Pressed(KEY_1_INDEX))
         {
             LED_Set_Light(LED_PORT_YELLOW, LED_LIGHT_ON);
@@ -108,7 +118,7 @@ void MyTask_Inital_Task(void)
      *    TaskHandle_t *pvCreatedTask           // 任务句柄（输出）
      * );
      */
-    xTaskCreate(MyTask_Init,    "Init_Task",    MTASK_STACK_1K ,  NULL,   32, NULL);
+    xTaskCreate(MyTask_Init,    "Init_Task",    MTASK_STACK_1K ,  NULL,   20, NULL);
     xTaskCreate(MyTask_10ms,    "10ms_Task",    MTASK_STACK_2K ,  NULL,   16, NULL);
     xTaskCreate(MyTask_50ms,    "50ms_Task",    MTASK_STACK_1K ,  NULL,   14, NULL);
     xTaskCreate(MyTask_100ms,   "100ms_Task",   MTASK_STACK_2K ,  NULL,   12, NULL);

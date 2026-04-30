@@ -15,6 +15,7 @@
 #include"oled.h"
 #include"font.h"
 #include"delay.h"
+#include "FreeRTOS.h"
 
 
 
@@ -482,7 +483,7 @@
 
 void OLED_Init(void)
 {
-	  delay_ms(50);
+	  vTaskDelay(50);
 	  OLED_WrCmd(0xae);//--turn off oled panel
 	  OLED_WrCmd(0x00);//---set low column address
 	  OLED_WrCmd(0x10);//---set high column address
@@ -513,5 +514,5 @@ void OLED_Init(void)
 	  OLED_WrCmd(0xaf);//--turn on oled panel
 	  OLED_Fill(0x00); //≥ı º«Â∆¡
 	  OLED_Set_Pos(0,0);
-	  delay_ms(50);
+	  vTaskDelay(50);
 }
