@@ -7,7 +7,7 @@
 **     Version     : Component SDK_S32K1xx_15, Driver 01.00, CPU db: 3.00.000
 **     Repository  : SDK_S32K1xx_15
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2026-04-24, 09:26, # CodeGen: 7
+**     Date/Time   : 2026-04-30, 16:28, # CodeGen: 13
 **
 **     Copyright 1997 - 2015 Freescale Semiconductor, Inc. 
 **     Copyright 2016-2017 NXP 
@@ -58,7 +58,7 @@ ftm_timer_param_t flexTimer_mc1_TimerConfig =
 {
     FTM_MODE_UP_TIMER, /* Counter mode */
     0U, /* Initial counter value */
-    37500U, /* Final counter value */
+    3750U, /* Final counter value */
 };
 
 /* Global configuration of flexTimer_mc1 */

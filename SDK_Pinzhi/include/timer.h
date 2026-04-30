@@ -14,6 +14,7 @@
 /* Macros Definition */
 
 /* Functions Declaration */
+uint16_t Timer_Get_Counter(void);
 void Timer_Init(void);
 
 #endif /* TIMER_H_ */

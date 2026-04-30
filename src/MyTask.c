@@ -6,10 +6,12 @@
 #include "task.h"
 #include "Cpu.h"
 #include "uart.h"
+#include "delay.h"
 #include "key.h"
 #include "led.h"
 #include "oled.h"
 #include "MyTask.h"
+#include "timer.h"
 
 
 
@@ -30,6 +32,7 @@ static void MyTask_Init(void *pvParameters)
 
     LOG_PRINT("Initialization Complete. MCU Freq: %dMhz\r\n", Delay_GetMcuFreq());
     OLED_TITLE((uint8_t*)"S32K148",(uint8_t*)"05_FTM");
+    OLED_ShowString(10,12,(uint8_t*)"Timer0: ",16,0);
 
     /* Delete this Task. */
     vTaskDelete(NULL);
@@ -41,8 +44,8 @@ static void MyTask_10ms(void *pvParameters)
     //OLED_Init();
     while(1)
     {
-        OLED_ShowString(0,0,"HELLO OLED", 11, 0);
-        //OLED_ShowString(8,2,(uint8_t*)"counterTmr0:",8,0);
+        //OLED_ShowString(0,0,"HELLO OLED", 11, 0);
+        OLED_write_number(70,12,Timer_Get_Counter(),16,0);
         if(Key_Is_Pressed(KEY_1_INDEX))
         {
             LED_Set_Light(LED_PORT_YELLOW, LED_LIGHT_ON);
