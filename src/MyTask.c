@@ -7,15 +7,40 @@
 #include "Cpu.h"
 #include "uart.h"
 #include "key.h"
+#include "delay.h"
 #include "led.h"
+#include "oled.h"
 #include "MyTask.h"
+#include "timer.h"
 
+
+/*!
+ * @brief Some Initial Actions shall be after the start of FreeRTOS Scheduler.
+ *
+ * @param[in] pvParameters input param, default is NULL.
+ */
+static void MyTask_Init(void *pvParameters)
+{
+    (void)pvParameters;
+
+    /* 
+    * OLED initialization must be performed after the FreeRTOS scheduler has started.
+    * I2C_PAL APIs rely on FreeRTOS primitives (semaphores), which are only available after vTaskStartScheduler().
+    */
+    OLED_Init();
+
+    LOG_PRINT("Initialization Complete. MCU Freq: %dMhz\r\n", Delay_GetMcuFreq());
+
+    /* Delete this Task. */
+    vTaskDelete(NULL);
+}
 
 static void MyTask_10ms(void *pvParameters)
 {
     (void)pvParameters;
     while(1)
     {
+        OLED_write_number(10, 12, Timer_Get_Counter(), 16, 0);
         if(Key_Is_Pressed(KEY_1_INDEX))
         {
             LED_Set_Light(LED_PORT_YELLOW, LED_LIGHT_ON);
@@ -79,7 +104,7 @@ static void MyTask_500ms(void *pvParameters)
     }
 }
 
-static void MyTask_CreateTasks(void)
+void MyTask_Inital_Task(void)
 {
     /* 
      * BaseType_t xTaskCreate(
@@ -91,6 +116,7 @@ static void MyTask_CreateTasks(void)
      *    TaskHandle_t *pvCreatedTask           // 任务句柄（输出）
      * );
      */
+    xTaskCreate(MyTask_Init,    "Init_Task",    MTASK_STACK_1K ,  NULL,   20, NULL);
     xTaskCreate(MyTask_10ms,    "10ms_Task",    MTASK_STACK_2K ,  NULL,   16, NULL);
     xTaskCreate(MyTask_50ms,    "50ms_Task",    MTASK_STACK_1K ,  NULL,   14, NULL);
     xTaskCreate(MyTask_100ms,   "100ms_Task",   MTASK_STACK_2K ,  NULL,   12, NULL);
@@ -98,9 +124,8 @@ static void MyTask_CreateTasks(void)
 }
 
 
-void MyTask_Start_Schedule(void)
+void MyTask_Start_Scheduler(void)
 {
-    MyTask_CreateTasks();
     vTaskStartScheduler();
 }
 

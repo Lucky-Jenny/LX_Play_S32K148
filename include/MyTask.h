@@ -24,6 +24,7 @@
 #define MTASK_STACK_1K          (uint16_t)(256U)    /* 1k bytes */
 
 
-void MyTask_Start_Schedule(void);
+void MyTask_Inital_Task(void);
+void MyTask_Start_Scheduler(void);
 
 #endif /* __MYTASK_H */

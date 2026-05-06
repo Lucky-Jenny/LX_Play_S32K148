@@ -36,7 +36,8 @@
 #include "oled.h"
 
 /* User Macros */
-#define PEX_RTOS_START 			MyTask_Start_Schedule
+#define PEX_RTOS_INIT           MyTask_Inital_Task
+#define PEX_RTOS_START 			MyTask_Start_Scheduler
 /* End of User Macros */
 
 /*! 
@@ -65,15 +66,22 @@ int main(void)
   Timer_Init();
   /* GPIO */
   PINS_DRV_Init(NUM_OF_CONFIGURED_PINS, g_pin_mux_InitConfigArr);
-  /* UART */
-  LPUART_DRV_Init(INST_LPUART1, &lpuart1_State, &lpuart1_InitConfig0);
   /* I2C */
   I2C_MasterInit(&i2c1_instance, &i2c1_MasterConfig0);
-  /* OLED */
-  // OLED_Init(); // OLED can only sync semaphore from SysTick. If FreeRTOS, it failed.
-
-  LOG_PRINT("Initialization Complete. MCU Freq: %dMhz\r\n", Delay_GetMcuFreq());
-  /* ----- Initialization Complete ----- */
+  /*
+   * Description:
+   * Interrupts that call FreeRTOS FromISR APIs must comply with the following rule.
+   * !!! Corresponding Peripheral priority >= configMAX_SYSCALL_INTERRUPT_PRIORITY (1) !!!
+   * By default, all Peripheral interrupt Priority is 0.
+   * ----------------------
+   * Adaptation:
+   * In OLED module, I2C1 Master interrupts by xSemaphoreGiveFromISR.
+   * Therefore, the LPI2C1 Master interrupt Priority must be set to 10 (>1).
+   */
+  INT_SYS_SetPriority(LPI2C1_Master_IRQn, 10U);
+  /* UART */
+  LPUART_DRV_Init(INST_LPUART1, &lpuart1_State, &lpuart1_InitConfig0);
+  INT_SYS_SetPriority(LPUART1_RxTx_IRQn, 10U);
 
   /*** Don't write any code pass this line, or it will be deleted during code generation. ***/
   /*** RTOS startup code. Macro PEX_RTOS_START is defined by the RTOS component. DON'T MODIFY THIS CODE!!! ***/

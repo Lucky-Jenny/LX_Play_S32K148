@@ -23,7 +23,9 @@ void Uart1_Printf(char* fmt,...)
     va_end(ap);
 
     LPUART_DRV_SendData(INST_LPUART1, (uint8_t *)USART1_TX_BUF, strlen(USART1_TX_BUF)); //·¢ËÍ
-    while (LPUART_DRV_GetTransmitStatus(INST_LPUART1, &bytesRemaining)
-    != STATUS_SUCCESS)  {}
+    while (LPUART_DRV_GetTransmitStatus(INST_LPUART1, &bytesRemaining) != STATUS_SUCCESS)
+    {
+        /* Do Nothing. */
+    }
 }
 
