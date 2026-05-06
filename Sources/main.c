@@ -36,8 +36,8 @@
 #include "oled.h"
 
 /* User Macros */
-#define PEX_RTOS_INIT           MyTask_Inital_Task
-#define PEX_RTOS_START 			MyTask_Start_Scheduler
+#define PEX_RTOS_INIT           MyTask_Initial_Task
+#define PEX_RTOS_START 		    MyTask_Start_Scheduler
 /* End of User Macros */
 
 /*! 

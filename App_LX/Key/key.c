@@ -30,7 +30,7 @@ uint8_t Key_Is_Pressed(uint8_t key_index)
     uint8_t input_keyStatus = 0;
     uint8_t ret_keyValue = KEY_IS_INVALID;
 
-    for(index_table; index_table < KEY_TOTAL_NUM; index_table++)
+    for(; index_table < KEY_TOTAL_NUM; index_table++)
     {
         if(key_index == Key_Config_Table[index_table].key_index)
         {

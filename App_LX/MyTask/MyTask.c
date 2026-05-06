@@ -104,7 +104,7 @@ static void MyTask_500ms(void *pvParameters)
     }
 }
 
-void MyTask_Inital_Task(void)
+void MyTask_Initial_Task(void)
 {
     /* 
      * BaseType_t xTaskCreate(
