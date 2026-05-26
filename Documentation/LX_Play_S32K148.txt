@@ -454,6 +454,51 @@ Module "i2c1"      (component i2c_pal)
    - i2c1_I2C_SlaveGetTransferStatus -Return the current status of the I2C slave transfer.
    - i2c1_I2C_SlaveAbortTransfer -Abort a non-blocking I2C Master transmission or reception.
 
+Module "Flash1"    (component flash)
+   - Flash1_FLASH_DRV_Init -Flash initialization.
+   - Flash1_FLASH_DRV_GetPFlashProtection -P-Flash get protection.
+   - Flash1_FLASH_DRV_SetPFlashProtection -P-Flash set protection.
+   - Flash1_FLASH_DRV_GetSecurityState -Flash get security state.
+   - Flash1_FLASH_DRV_SecurityBypass -Flash security bypass.
+   - Flash1_FLASH_DRV_EraseAllBlock -Flash erase all Blocks.
+   - Flash1_FLASH_DRV_VerifyAllBlock -Flash verify all Blocks.
+   - Flash1_FLASH_DRV_EraseSector -Flash erase sector.
+   - Flash1_FLASH_DRV_VerifySection -Flash verify sector.
+   - Flash1_FLASH_DRV_EraseSuspend -Flash erase suspend.
+   - Flash1_FLASH_DRV_EraseResume -Flash erase resume.
+   - Flash1_FLASH_DRV_ReadOnce -Flash read once.
+   - Flash1_FLASH_DRV_ProgramOnce -Flash program once.
+   - Flash1_FLASH_DRV_Program -Flash program.
+   - Flash1_FLASH_DRV_ProgramCheck -Flash program check.
+   - Flash1_FLASH_DRV_CheckSum -Calculate check sum.
+   - Flash1_FLASH_DRV_ProgramSection -Flash program section.
+   - Flash1_FLASH_DRV_EraseBlock -Flash erase block.
+   - Flash1_FLASH_DRV_VerifyBlock -Flash verify block.
+   - Flash1_FLASH_DRV_GetEERAMProtection -EERAM get protection.
+   - Flash1_FLASH_DRV_SetEERAMProtection -EERAM set protection.
+   - Flash1_FLASH_DRV_SetFlexRamFunction -Flash Set FlexRam function command.
+   - Flash1_FLASH_DRV_EEEWrite -EEPROM Emulator Write.
+   - Flash1_FLASH_DRV_DEFlashPartition -Flash D/E-Flash Partition.
+   - Flash1_FLASH_DRV_GetDFlashProtection -D-Flash get protection.
+   - Flash1_FLASH_DRV_SetDFlashProtection -D-Flash set protection.
+   - Flash1_FLASH_DRV_PFlashSwap -swap between the two half of total logical P-Flash memory blocks within the memory map
+   - Flash1_FLASH_DRV_PFlashSwapCtl -implements swap control command corresponding with swap control code provided via swapcmd 
+                parameter
+   - Flash1_FLASH_DRV_EraseAllBlockUnsecure -Flash erase all Blocks.
+   - Flash1_FLASH_DRV_EnableCmdCompleteInterupt -Enable the command complete interrupt.
+   - Flash1_FLASH_DRV_DisableCmdCompleteInterupt -Disable the command complete interrupt.
+   - Flash1_FLASH_DRV_GetCmdCompleteFlag -Check the command complete flag has completed or not.
+   - Flash1_FLASH_DRV_EnableReadColisionInterupt -Enable the read collision error interrupt.
+   - Flash1_FLASH_DRV_DisableReadColisionInterupt -Disable the read collision error interrupt.
+   - Flash1_FLASH_DRV_GetReadColisionFlag -Check the read collision error flag is detected or not.
+   - Flash1_FLASH_DRV_ClearReadColisionFlag -Clear the read collision error flag.
+   - Flash1_FLASH_DRV_EnableDoubleBitFaultInterupt -Enable the double bit fault detect interrupt.
+   - Flash1_FLASH_DRV_DisableDoubleBitFaultInterupt -Disable the double bit fault detect interrupt.
+   - Flash1_FLASH_DRV_GetDoubleBitFaultFlag -Check the double bit fault flag is detected or not.
+   - Flash1_FLASH_DRV_ClearDoubleBitFaultFlag -Clear the double bit fault detect flag.
+   - Flash1_FLASH_DRV_ForceDoubleBitFaultDetectCmd -Force Double Bit Fault Detect.
+   - Flash1_FLASH_DRV_GetDefaultConfig -Get default flash user configuration.
+
 Module "Cpu"       (component S32K148_176)
    - Cpu_SystemInit -This function disables the watchdog, enables FPU and the power mode protection. SystemInit is called from 
                 startup_device file.
