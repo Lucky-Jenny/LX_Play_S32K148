@@ -31,13 +31,13 @@
 /* User includes (#include below this line is not maintained by Processor Expert) */
 #include "MyTask.h"
 #include "timer.h"
-#include "uart.h"
+#include "log.h"
 #include "delay.h"
 #include "oled.h"
 
 /* User Macros */
 #define PEX_RTOS_INIT           MyTask_Initial_Task
-#define PEX_RTOS_START 		    MyTask_Start_Scheduler
+#define PEX_RTOS_START 		      MyTask_Start_Scheduler
 /* End of User Macros */
 
 /*! 

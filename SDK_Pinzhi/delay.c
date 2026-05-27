@@ -5,7 +5,7 @@
 
 #include"cpu.h"
 #include"delay.h"
-#include"uart.h"
+#include"log.h"
 
 static uint32_t freq_us;
 

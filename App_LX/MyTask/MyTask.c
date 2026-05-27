@@ -5,7 +5,7 @@
 #include "FreeRTOS.h"
 #include "task.h"
 #include "Cpu.h"
-#include "uart.h"
+#include "log.h"
 #include "key.h"
 #include "delay.h"
 #include "led.h"
@@ -29,7 +29,7 @@ static void MyTask_Init(void *pvParameters)
     */
     OLED_Init();
 
-    LOG_PRINT("Initialization Complete. MCU Freq: %dMhz\r\n", Delay_GetMcuFreq());
+    LOG_PRINT_INFO("Initialization Complete. MCU Freq: %dMhz.", Delay_GetMcuFreq());
 
     /* Delete this Task. */
     vTaskDelete(NULL);

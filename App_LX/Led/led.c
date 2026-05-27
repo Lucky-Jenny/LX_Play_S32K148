@@ -4,7 +4,7 @@
 #include <stdint.h>
 #include "cpu.h"
 #include "led.h"
-#include "uart.h"
+#include "log.h"
 
 
 /*!
@@ -24,6 +24,6 @@ void LED_Set_Light(uint8_t led_port, uint8_t led_status)
     }
     else
     {
-        LOG_PRINT("[LED_Set_Light] led_port is invalid!\n");
+        LOG_PRINT_DBG("led_port is invalid!");
     }
 }
