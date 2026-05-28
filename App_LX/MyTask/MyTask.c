@@ -12,7 +12,14 @@
 #include "oled.h"
 #include "MyTask.h"
 #include "timer.h"
+#include "Flash_FlexRAM.h"
 
+
+#define WRITE_LEN       8U
+uint8_t testWrite[WRITE_LEN] = {0x1U, 0x2U, 0x3U, 0x4U, 0x5U, 0x6U, 0x7U, 0x8U};
+uint8_t testRead[WRITE_LEN];
+uint8_t wr_flag = 0;
+uint8_t wr_result;
 
 /*!
  * @brief Some Initial Actions shall be after the start of FreeRTOS Scheduler.
@@ -31,6 +38,13 @@ static void MyTask_Init(void *pvParameters)
 
     LOG_PRINT_INFO("Initialization Complete. MCU Freq: %dMhz.", Delay_GetMcuFreq());
 
+    Flash_FlexRAM_ReadData(&wr_flag, 6, 1);
+    LOG_PRINT_DBG("write_flag = %d.", wr_flag);
+    Flash_FlexRAM_ReadData(testRead, 16, WRITE_LEN);
+    LOG_PRINT_INFO("testRead:");
+    LOG_PRINT_HEX_ARRAY(testRead, WRITE_LEN);
+
+
     /* Delete this Task. */
     vTaskDelete(NULL);
 }
@@ -44,6 +58,14 @@ static void MyTask_10ms(void *pvParameters)
         if(Key_Is_Pressed(KEY_1_INDEX))
         {
             LED_Set_Light(LED_PORT_YELLOW, LED_LIGHT_ON);
+            if((wr_flag == 0x2u) || (wr_flag == 0xFFu))
+            {
+                wr_flag = 1U;
+                wr_result = Flash_FlexRAM_WriteData(testWrite, 16, WRITE_LEN);
+                LOG_PRINT_INFO("Write buffer Result: %d.", wr_result);
+                wr_result = Flash_FlexRAM_WriteData(&wr_flag, 6, 1);
+                LOG_PRINT_INFO("Write flag Result: %d.", wr_result);
+            }
         }
         else
         {
@@ -61,6 +83,13 @@ static void MyTask_50ms(void *pvParameters)
         if(Key_Is_Pressed(KEY_2_INDEX))
         {
             LED_Set_Light(LED_PORT_RED, LED_LIGHT_ON);
+            if(wr_flag == 0x1u)
+            {
+                wr_flag = 2U;
+                wr_result = Flash_FlexRAM_WriteData(&wr_flag, 6, 1);
+                LOG_PRINT_INFO("Write flag Result: %d.", wr_result);
+
+            }
         }
         else
         {
