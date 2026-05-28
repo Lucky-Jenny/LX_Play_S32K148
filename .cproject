@@ -55,7 +55,8 @@
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/App_LX/Key&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/App_LX/MyTask&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/App_LX/Timer&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/App_LX/Uart&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/App_LX/Log&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/App_LX/Flash&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK_Pinzhi/include&quot;"/>
 								</option>
 								<option id="com.nxp.s32ds.cle.arm.mbs.arm32.bare.tool.c.compiler.option.target.mcpu.1290050465" name="ARM family" superClass="com.nxp.s32ds.cle.arm.mbs.arm32.bare.tool.c.compiler.option.target.mcpu" useByScannerDiscovery="true" value="com.nxp.s32ds.cle.arm.mbs.arm32.bare.tool.c.compiler.option.target.mcpu.cortex-m4" valueType="enumerated"/>
@@ -373,7 +374,7 @@
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.targetPlatform.gnu.cross.1891454869" isAbstract="false" osList="all" superClass="cdt.managedbuild.targetPlatform.gnu.cross"/>
 							<builder buildPath="${workspace_loc:/LX_Play_S32K148}/Debug_RAM" id="com.freescale.s32ds.cross.gnu.builder.958734210" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="FSL Make Builder" superClass="com.freescale.s32ds.cross.gnu.builder"/>
 							<tool id="com.nxp.s32ds.cle.arm.mbs.arm32.bare.tool.c.compiler.1284660477" name="Standard S32DS C Compiler" superClass="com.nxp.s32ds.cle.arm.mbs.arm32.bare.tool.c.compiler">
-								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.option.optimization.level.338702878" name="Optimization Level" superClass="gnu.c.compiler.option.optimization.level" useByScannerDiscovery="false" value="gnu.c.optimization.level.optimize" valueType="enumerated"/>
+								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.option.optimization.level.338702878" name="Optimization Level" superClass="gnu.c.compiler.option.optimization.level" useByScannerDiscovery="false" value="gnu.c.optimization.level.none" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.debugging.level.1838172397" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.default" valueType="enumerated"/>
 								<option id="com.freescale.s32ds.cross.gnu.tool.c.compiler.option.optimization.functionsections.1539052931" name="Function sections (-ffunction-sections)" superClass="com.freescale.s32ds.cross.gnu.tool.c.compiler.option.optimization.functionsections" useByScannerDiscovery="true" value="true" valueType="boolean"/>
 								<option id="com.freescale.s32ds.cross.gnu.tool.c.compiler.option.optimization.datasections.197745423" name="Data sections (-fdata-sections)" superClass="com.freescale.s32ds.cross.gnu.tool.c.compiler.option.optimization.datasections" useByScannerDiscovery="true" value="true" valueType="boolean"/>
@@ -399,6 +400,7 @@
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/App_LX/Key&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/App_LX/MyTask&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/App_LX/Timer&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/App_LX/Flash&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/App_LX/Log&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK_Pinzhi/include&quot;"/>
 								</option>

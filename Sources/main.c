@@ -34,6 +34,7 @@
 #include "log.h"
 #include "delay.h"
 #include "oled.h"
+#include "Flash_FlexRAM.h"
 
 /* User Macros */
 #define PEX_RTOS_INIT           MyTask_Initial_Task
@@ -82,6 +83,8 @@ int main(void)
   /* UART */
   LPUART_DRV_Init(INST_LPUART1, &lpuart1_State, &lpuart1_InitConfig0);
   INT_SYS_SetPriority(LPUART1_RxTx_IRQn, 10U);
+  /* Flash */
+  Flash_FlexRAM_Init();
 
   /*** Don't write any code pass this line, or it will be deleted during code generation. ***/
   /*** RTOS startup code. Macro PEX_RTOS_START is defined by the RTOS component. DON'T MODIFY THIS CODE!!! ***/

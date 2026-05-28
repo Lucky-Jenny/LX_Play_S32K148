@@ -820,7 +820,7 @@
     </GenFiles>
     <SignalListFile />
     <DestinationCompiler>GNUC</DestinationCompiler>
-    <ProjectModificationStamp>10</ProjectModificationStamp>
+    <ProjectModificationStamp>11</ProjectModificationStamp>
   </Options>
   <CpuID_1>
     <Generated>true</Generated>
