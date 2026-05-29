@@ -7,7 +7,7 @@
 **     Version     : Component SDK_S32K1xx_15, Driver 01.00, CPU db: 3.00.000
 **     Repository  : SDK_S32K1xx_15
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2026-04-20, 15:31, # CodeGen: 1
+**     Date/Time   : 2026-06-01, 15:08, # CodeGen: 9
 **     Abstract    :
 **
 **
@@ -51,13 +51,13 @@
 
 /*! lpuart1 configuration structure */
 const lpuart_user_config_t lpuart1_InitConfig0 = {
-  .transferType = LPUART_USING_INTERRUPTS,
+  .transferType = LPUART_USING_DMA,
   .baudRate = 115200U,
   .parityMode = LPUART_PARITY_DISABLED,
   .stopBitCount = LPUART_ONE_STOP_BIT,
   .bitCountPerChar = LPUART_8_BITS_PER_CHAR,
   .rxDMAChannel = 0U,
-  .txDMAChannel = 0U,
+  .txDMAChannel = 1U,
 };
 
 

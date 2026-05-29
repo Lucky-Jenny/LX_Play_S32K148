@@ -29,12 +29,7 @@
   volatile int exit_code = 0;
 
 /* User includes (#include below this line is not maintained by Processor Expert) */
-#include "MyTask.h"
-#include "timer.h"
-#include "log.h"
-#include "delay.h"
-#include "oled.h"
-#include "Flash_FlexRAM.h"
+#include "Global_Cfg.h"
 
 /* User Macros */
 #define PEX_RTOS_INIT           MyTask_Initial_Task
@@ -65,6 +60,8 @@ int main(void)
   Delay_Init();
   /* Timer */
   Timer_Init();
+  /* eDMA */
+  EDMA_DRV_Init(&dmaController1_State, &dmaController1_InitConfig0, edmaChnStateArray, edmaChnConfigArray, EDMA_CONFIGURED_CHANNELS_COUNT);
   /* GPIO */
   PINS_DRV_Init(NUM_OF_CONFIGURED_PINS, g_pin_mux_InitConfigArr);
   /* I2C */
@@ -81,8 +78,7 @@ int main(void)
    */
   INT_SYS_SetPriority(LPI2C1_Master_IRQn, 10U);
   /* UART */
-  LPUART_DRV_Init(INST_LPUART1, &lpuart1_State, &lpuart1_InitConfig0);
-  INT_SYS_SetPriority(LPUART1_RxTx_IRQn, 10U);
+  UART_Init();
   /* Flash */
   Flash_FlexRAM_Init();
 

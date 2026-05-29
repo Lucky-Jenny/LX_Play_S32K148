@@ -3,7 +3,7 @@
   <Header>
     <Name>LX_Play_S32K148</Name>
     <SavedBy>baoba</SavedBy>
-    <ModificationStamp>11</ModificationStamp>
+    <ModificationStamp>12</ModificationStamp>
     <Date>2026-04-20</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.12.2.RT7_b1743-0713</PEversion>
@@ -29,7 +29,7 @@
     <UseExistingModules>true</UseExistingModules>
     <RenamePeripheries>false</RenamePeripheries>
     <Autodependency>true</Autodependency>
-    <ProjectCompNumb>14</ProjectCompNumb>
+    <ProjectCompNumb>15</ProjectCompNumb>
     <DelUnusedPreviouslyGenFiles>true</DelUnusedPreviouslyGenFiles>
     <GeneratedCodeFrozen>false</GeneratedCodeFrozen>
     <AssignInitComponentNameToPrph>true</AssignInitComponentNameToPrph>
@@ -23255,8 +23255,8 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>0</Index>
-        <EnumSymbVal>LPUART_USING_INTERRUPTS</EnumSymbVal>
+        <Index>1</Index>
+        <EnumSymbVal>LPUART_USING_DMA</EnumSymbVal>
       </ItemState>
       <ItemState>
         <ItemSymbol>BaudRate0</ItemSymbol>
@@ -23306,7 +23306,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>RxDMAChannel0</ItemSymbol>
-        <ReadOnly>true</ReadOnly>
+        <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>0</Index>
@@ -23314,12 +23314,12 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>TxDMAChannel0</ItemSymbol>
-        <ReadOnly>true</ReadOnly>
+        <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <TypeSpecNameState>DMAchannel_t</TypeSpecNameState>
-        <Index>0</Index>
-        <EnumSymbVal>0U</EnumSymbVal>
+        <Index>1</Index>
+        <EnumSymbVal>1U</EnumSymbVal>
       </ItemState>
       <ItemState>
         <ItemSymbol>LinkItem</ItemSymbol>
@@ -23721,7 +23721,7 @@
     <CompEnabled>true</CompEnabled>
     <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
     <IconName>DMA_LDD</IconName>
-    <UserFolderName>Referenced_Components</UserFolderName>
+    <UserFolderName />
     <Comment lines_count="0" />
     <Template />
     <BeanVersion>SDK_S32K1xx_15</BeanVersion>
@@ -23848,7 +23848,7 @@
       <ItemState>
         <ItemSymbol>edmaChannelsConfig</ItemSymbol>
         <ReadOnly>false</ReadOnly>
-        <ListItemCount>1</ListItemCount>
+        <ListItemCount>2</ListItemCount>
         <UserReadOnly>false</UserReadOnly>
         <Expanded>true</Expanded>
         <ItemsTypeState>Beans\edma\Items\S32_SDK_DMA_16CH\edma_channelCfg.item</ItemsTypeState>
@@ -23893,27 +23893,94 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>chnRequest0</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
+        <ReadOnly>true</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <TypeSpecNameState>type_edma_channel_request_s32k148</TypeSpecNameState>
-        <Index>0</Index>
-        <EnumSymbVal>EDMA_REQ_DISABLED</EnumSymbVal>
+        <Index>4</Index>
+        <EnumSymbVal>EDMA_REQ_LPUART1_RX</EnumSymbVal>
       </ItemState>
       <ItemState>
         <ItemSymbol>CallbackName0</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
+        <ReadOnly>true</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <Value>NULL</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>CallbackParam0</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
+        <ReadOnly>true</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <Value>NULL</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>PeriodicTrigger0</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>1</Index>
+        <Value>false</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>edmaChannelCfg_1</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>true</Value>
+        <Expanded>true</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>ChnStateStruct1</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Value>dmaController1Chn1_State</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>ChnConfigStructName1</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Value>dmaController1Chn1_Config</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>ChnConfigStructType1</ItemSymbol>
+        <Value>edma_channel_config_t</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>chnNumber1</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>1</Index>
+        <EnumSymbVal>1U</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>chnPriority1</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <EnumSymbVal>EDMA_CHN_DEFAULT_PRIORITY</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>chnRequest1</ItemSymbol>
+        <ReadOnly>true</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>type_edma_channel_request_s32k148</TypeSpecNameState>
+        <Index>5</Index>
+        <EnumSymbVal>EDMA_REQ_LPUART1_TX</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CallbackName1</ItemSymbol>
+        <ReadOnly>true</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Value>NULL</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CallbackParam1</ItemSymbol>
+        <ReadOnly>true</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Value>NULL</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>PeriodicTrigger1</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>

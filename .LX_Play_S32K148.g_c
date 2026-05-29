@@ -820,7 +820,7 @@
     </GenFiles>
     <SignalListFile />
     <DestinationCompiler>GNUC</DestinationCompiler>
-    <ProjectModificationStamp>11</ProjectModificationStamp>
+    <ProjectModificationStamp>12</ProjectModificationStamp>
   </Options>
   <CpuID_1>
     <Generated>true</Generated>
@@ -828,7 +828,7 @@
     <GenComponentVersion>01.197</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
-    <HeaderAge>1555204424</HeaderAge>
+    <HeaderAge>1555925107</HeaderAge>
     <CodeAge>1553484634</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>3</GenNumMethods>
@@ -984,7 +984,7 @@
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule />
     <HeaderAge>1553239059</HeaderAge>
-    <CodeAge>1553239059</CodeAge>
+    <CodeAge>1556183331</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>19</GenNumMethods>
     <LPUART_DRV_GetDefaultConfig>true</LPUART_DRV_GetDefaultConfig>
@@ -1054,8 +1054,8 @@
     <GenComponentVersion>SDK_S32K1xx_15</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1553239059</HeaderAge>
-    <CodeAge>1553239059</CodeAge>
+    <HeaderAge>1556183331</HeaderAge>
+    <CodeAge>1556183331</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>32</GenNumMethods>
     <EDMA_DRV_Init>true</EDMA_DRV_Init>
