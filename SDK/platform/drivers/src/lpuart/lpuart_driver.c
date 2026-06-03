@@ -86,6 +86,7 @@
 #include "lpuart_hw_access.h"
 #include "lpuart_irq.h"
 #include "clock_manager.h"
+#include "uart.h"
 
 /*******************************************************************************
  * Variables
@@ -1117,6 +1118,12 @@ void LPUART_DRV_IRQHandler(uint32_t instance)
 
     const LPUART_Type * base = s_lpuartBase[instance];
 
+    /* Handler Idle line interrupt before flag cleared. */
+    if (LPUART_GetStatusFlag(base, LPUART_IDLE_LINE_DETECT))
+    {
+        UART_Rx_Data_Handler(instance);
+    }
+
     LPUART_DRV_ErrIrqHandler(instance);
 
     /* Handle receive data full interrupt */
@@ -1650,6 +1657,9 @@ static status_t LPUART_DRV_StartReceiveDataUsingInt(uint32_t instance,
     /* Enable receive data full interrupt */
     LPUART_SetIntMode(base, LPUART_INT_RX_DATA_REG_FULL, true);
 
+    /* Enable idle line interrupt */
+    LPUART_SetIntMode(base, LPUART_INT_IDLE_LINE, true);
+
     return STATUS_SUCCESS;
 }
 
@@ -1707,6 +1717,9 @@ static status_t LPUART_DRV_StartReceiveDataUsingDma(uint32_t instance,
 
     /* Enable rx DMA requests for the current instance */
     LPUART_SetRxDmaCmd(base, true);
+
+    /* Enable idle line interrupt */
+    LPUART_SetIntMode(base, LPUART_INT_IDLE_LINE, true);
 
     return STATUS_SUCCESS;
 }

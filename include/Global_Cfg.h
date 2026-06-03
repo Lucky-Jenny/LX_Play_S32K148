@@ -20,12 +20,19 @@ extern "C" {
 /*******************************************************************************
  * Included Files
  ******************************************************************************/
+/* ----- SDK Inclusions ----- */
+#include "Cpu.h"
+#include "FreeRTOS.h"
+#include "task.h"
+#include "oled.h"
+#include "delay.h"
+/* ----- User Inclusions ----- */
+#include "led.h"
+#include "key.h"
+#include "log.h"
 #include "MyTask.h"
 #include "timer.h"
 #include "uart.h"
-#include "log.h"
-#include "delay.h"
-#include "oled.h"
 #include "Flash_FlexRAM.h"
 /*******************************************************************************
  * Macro Definitions

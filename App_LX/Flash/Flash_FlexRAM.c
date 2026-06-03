@@ -20,9 +20,12 @@
  * Internal Macro Definitions
  ******************************************************************************/
 #if FLASH_FLEXRAM_HAS_DEBUG
-  #define FLASH_LOG_DBG         LOG_PRINT_DBG
+  #define FLASH_LOG_DBG                     LOG_PRINT_DBG
 #else
-  #define FLASH_LOG_DBG
+  #define FLASH_LOG_DBG(fmt, ...)           do { \
+                                                (void)fmt; \
+                                                (void)__VA_ARGS__; \
+                                            } while(0)
 #endif /* End of FLASH_FLEXRAM_HAS_DEBUG */
 /*******************************************************************************
  * Internal Type Definitions

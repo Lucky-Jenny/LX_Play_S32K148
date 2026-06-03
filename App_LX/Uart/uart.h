@@ -25,7 +25,9 @@ extern "C" {
 /*******************************************************************************
  * Macro Definitions
  ******************************************************************************/
-#define UART_RX_MAX_LEN             ((uint8_t)16U)
+#define UART_RX_MAX_LEN                 ((uint8_t)128U)
+#define UART_FLG_RX_NOT_RECEIVED        ((uint8_t)0U)
+#define UART_FLG_RX_RECEIVED            ((uint8_t)1U)
 /*******************************************************************************
  * Type Definitions
  ******************************************************************************/
@@ -37,7 +39,9 @@ extern "C" {
 /*******************************************************************************
  * Public Function Prototypes
  ******************************************************************************/
-
+void UART_Init(void);
+void UART_Rx_Data_Handler(uint32_t instance);
+void UART_MainFunction(void);
 
 #ifdef __cplusplus
 }

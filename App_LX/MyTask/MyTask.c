@@ -2,16 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 /* User includes. */
-#include "FreeRTOS.h"
-#include "task.h"
-#include "Cpu.h"
-#include "log.h"
-#include "key.h"
-#include "delay.h"
-#include "led.h"
-#include "oled.h"
-#include "MyTask.h"
-#include "timer.h"
+#include "Global_Cfg.h"
 
 
 /*!
@@ -40,7 +31,6 @@ static void MyTask_10ms(void *pvParameters)
     (void)pvParameters;
     while(1)
     {
-        OLED_write_number(10, 12, Timer_Get_Counter(), 16, 0);
         if(Key_Is_Pressed(KEY_1_INDEX))
         {
             LED_Set_Light(LED_PORT_YELLOW, LED_LIGHT_ON);
@@ -58,6 +48,7 @@ static void MyTask_50ms(void *pvParameters)
     (void)pvParameters;
     while(1)
     {
+        UART_MainFunction();
         if(Key_Is_Pressed(KEY_2_INDEX))
         {
             LED_Set_Light(LED_PORT_RED, LED_LIGHT_ON);
@@ -75,6 +66,7 @@ static void MyTask_100ms(void *pvParameters)
     (void)pvParameters;
     while(1)
     {
+        OLED_write_number(10, 12, Timer_Get_Counter(), 16, 0);
         if(Key_Is_Pressed(KEY_3_INDEX))
         {
             LED_Set_Light(LED_PORT_GREEN, LED_LIGHT_ON);
