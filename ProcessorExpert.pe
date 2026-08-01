@@ -24346,7 +24346,7 @@
         <ItemSymbol>FreeRTOSFileDirectory</ItemSymbol>
         <ReadOnly>true</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>E:\03_Software\S32DS.for.Arm\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\rtos\FreeRTOS_S32K\</Value>
+        <Value>D:\02_Softwares\NXP\S32DS.for.Arm\eclipse\ProcessorExpert\..\..\S32DS\software\S32SDK_S32K1xx_RTM_3.0.0\rtos\FreeRTOS_S32K\</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>VersionSpecificItem</ItemSymbol>
